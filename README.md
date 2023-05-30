@@ -1,8 +1,6 @@
 # a2sinternship-project
 Internship
 # a2sinternshipp
-
-# a2sinternshipp
 <br>
 Application structure<br>
 <br>
