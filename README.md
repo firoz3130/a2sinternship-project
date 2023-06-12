@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 # a2sinternshipp
 
 Application structure<br>
@@ -29,10 +26,18 @@ The final output screens developed are as follows:<br>
 <tr>
 <td><img src="pic2.jpg"></td>
 <td><img src="pic1.jpg"></td>
-<td><video width="200" height="200" controls><source src="recording.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
 </tr>
 </table>
+
+
+https://github.com/firoz3130/a2sinternship-project/assets/77429826/46b549b4-9977-4f8d-b28b-56a3c718aee6
+
+
 A new Flutter project.
+
+
+
+
 
 ## Getting Started
 
