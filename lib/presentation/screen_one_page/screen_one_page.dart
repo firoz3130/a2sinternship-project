@@ -148,34 +148,34 @@ class ScreenOnePage extends StatelessWidget {
                                   ),
                                   child: IconButton(
                                     onPressed: () {
-                                      String searchQuery =
-                                          searchController!.text.toLowerCase();
-                                      FirebaseFirestore.instance
-                                          .collection("products")
-                                          .where("name",
-                                              isGreaterThanOrEqualTo:
-                                                  searchQuery)
-                                          .where("name",
-                                              isLessThan:
-                                                  searchQuery + "\uf8ff")
-                                          .getDocuments()
-                                          .then((querySnapshot) {
-                                        // Handle the search results
-                                        List<Product> products = [];
-                                        querySnapshot.documents
-                                            .forEach((documentSnapshot) {
-                                          Product product =
-                                              Product.fromSnapshot(
-                                                  documentSnapshot);
-                                          products.add(product);
-                                        });
+                                      // String searchQuery =
+                                      //     searchController!.text.toLowerCase();
+                                      // FirebaseFirestore.instance
+                                      //     .collection("products")
+                                      //     .where("name",
+                                      //         isGreaterThanOrEqualTo:
+                                      //             searchQuery)
+                                      //     .where("name",
+                                      //         isLessThan:
+                                      //             searchQuery + "\uf8ff")
+                                      //     .getDocuments()
+                                      //     .then((querySnapshot) {
+                                      //   // Handle the search results
+                                      //   List<Product> products = [];
+                                      //   querySnapshot.documents
+                                      //       .forEach((documentSnapshot) {
+                                      //     Product product =
+                                      //         Product.fromSnapshot(
+                                      //             documentSnapshot);
+                                      //     products.add(product);
+                                      //   });
 
-                                        // Update the UI with the search results
-                                        // ...
-                                      }).catchError((error) {
-                                        // Handle any errors that occur during the search
-                                        // ...
-                                      });
+                                      //   // Update the UI with the search results
+                                      //   // ...
+                                      // }).catchError((error) {
+                                      //   // Handle any errors that occur during the search
+                                      //   // ...
+                                      // });
                                     },
                                     icon: Icon(
                                       Icons.clear,

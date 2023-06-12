@@ -659,16 +659,19 @@ class ScreenTwoPage extends StatelessWidget {
                                     padding: getPadding(
                                       top: 20,
                                     ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Padding(
-                                          padding: getPadding(
-                                            top: 5,
-                                            bottom: 5,
-                                          ),
-                                          child: SingleChildScrollView(
+                                    child: SingleChildScrollView(
+                                      //why am i getting renderflex overflowed error
+                                      //when i use row  here
+                                      scrollDirection: Axis.horizontal,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Padding(
+                                            padding: getPadding(
+                                              top: 5,
+                                              bottom: 5,
+                                            ),
                                             child: Column(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
@@ -697,63 +700,63 @@ class ScreenTwoPage extends StatelessWidget {
                                               ],
                                             ),
                                           ),
-                                        ),
-                                        Container(
-                                          padding: getPadding(
-                                            all: 9,
-                                          ),
-                                          decoration: AppDecoration
-                                              .outlineGray60059
-                                              .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .roundedBorder6,
-                                          ),
-                                          child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              CustomButton(
-                                                child: CustomImageView(
+                                          Container(
+                                            padding: getPadding(
+                                              all: 9,
+                                            ),
+                                            decoration: AppDecoration
+                                                .outlineGray60059
+                                                .copyWith(
+                                              borderRadius: BorderRadiusStyle
+                                                  .roundedBorder6,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                CustomButton(
+                                                  child: CustomImageView(
+                                                    svgPath: ImageConstant
+                                                        .imgIconsaxboldminussquare,
+                                                    height: getSize(
+                                                      30,
+                                                    ),
+                                                    width: getSize(
+                                                      30,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: getPadding(
+                                                    left: 23,
+                                                  ),
+                                                  child: Text(
+                                                    "lbl_1".tr,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                    textAlign: TextAlign.center,
+                                                    style: AppStyle
+                                                        .txtArchivoRomanBold20,
+                                                  ),
+                                                ),
+                                                CustomImageView(
                                                   svgPath: ImageConstant
-                                                      .imgIconsaxboldminussquare,
+                                                      .imgIconsaxboldaddsquare,
                                                   height: getSize(
                                                     30,
                                                   ),
                                                   width: getSize(
                                                     30,
                                                   ),
+                                                  margin: getMargin(
+                                                    left: 23,
+                                                  ),
                                                 ),
-                                              ),
-                                              Padding(
-                                                padding: getPadding(
-                                                  left: 23,
-                                                ),
-                                                child: Text(
-                                                  "lbl_1".tr,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  textAlign: TextAlign.center,
-                                                  style: AppStyle
-                                                      .txtArchivoRomanBold20,
-                                                ),
-                                              ),
-                                              CustomImageView(
-                                                svgPath: ImageConstant
-                                                    .imgIconsaxboldaddsquare,
-                                                height: getSize(
-                                                  30,
-                                                ),
-                                                width: getSize(
-                                                  30,
-                                                ),
-                                                margin: getMargin(
-                                                  left: 23,
-                                                ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                   Padding(
