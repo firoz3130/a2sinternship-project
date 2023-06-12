@@ -1,3 +1,6 @@
+import 'package:a2sinternshipp/firebase_options.dart';
+import 'package:a2sinternshipp/presentation/frame_four_screen/bloc/frame_four_bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,8 +10,9 @@ import 'core/app_export.dart';
 
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]).then((value) {
@@ -18,8 +22,17 @@ void main() {
   });
 }
 
+class ParentWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocProvider<FrameFourBloc>(
+      create: (_) => FrameFourBloc(FrameFourState()),
+      child: MyApp(),
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

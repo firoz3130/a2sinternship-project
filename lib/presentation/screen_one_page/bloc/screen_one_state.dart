@@ -19,7 +19,7 @@ class ScreenOneState extends Equatable {
       ];
   ScreenOneState copyWith({
     TextEditingController? searchController,
-    ScreenOneModel? screenOneModelObj,
+    ScreenOneModel? screenOneModelObj, required List<String> itemNames,
   }) {
     return ScreenOneState(
       searchController: searchController ?? this.searchController,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:a2sinternshipp/main.dart';
 
 class ServerException implements Exception {}
 
@@ -12,6 +11,7 @@ class NoInternetException implements Exception {
   late String _message;
 
   NoInternetException([String message = 'NoInternetException Occurred']) {
+    var globalMessengerKey;
     if (globalMessengerKey.currentState != null) {
       globalMessengerKey.currentState!
           .showSnackBar(SnackBar(content: Text(message)));

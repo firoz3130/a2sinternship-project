@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'bloc/screen_one_bloc.dart';
 import 'models/screen_one_model.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +8,14 @@ import 'package:a2sinternshipp/widgets/app_bar/appbar_subtitle.dart';
 import 'package:a2sinternshipp/widgets/app_bar/custom_app_bar.dart';
 import 'package:a2sinternshipp/widgets/custom_search_view.dart';
 
-// ignore_for_file: must_be_immutable
 class ScreenOnePage extends StatelessWidget {
+  // final products = FirebaseFirestore.instance.collection('products');
+  // final TextEditingController searchController = TextEditingController();
+  // final QuerySnapshot querySnapshot =
+  //     FirebaseFirestore.instance.collection('products').get() as QuerySnapshot;
+  late final List<String> itemNames;
+  CollectionReference _products =
+      FirebaseFirestore.instance.collection('products');
   static Widget builder(BuildContext context) {
     return BlocProvider<ScreenOneBloc>(
       create: (context) => ScreenOneBloc(ScreenOneState(
@@ -20,6 +28,8 @@ class ScreenOnePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // _products.get();
+    // _products.snapshots();
     return SafeArea(
       child: Scaffold(
         backgroundColor: ColorConstant.gray100,
@@ -138,7 +148,34 @@ class ScreenOnePage extends StatelessWidget {
                                   ),
                                   child: IconButton(
                                     onPressed: () {
-                                      searchController!.clear();
+                                      String searchQuery =
+                                          searchController!.text.toLowerCase();
+                                      FirebaseFirestore.instance
+                                          .collection("products")
+                                          .where("name",
+                                              isGreaterThanOrEqualTo:
+                                                  searchQuery)
+                                          .where("name",
+                                              isLessThan:
+                                                  searchQuery + "\uf8ff")
+                                          .getDocuments()
+                                          .then((querySnapshot) {
+                                        // Handle the search results
+                                        List<Product> products = [];
+                                        querySnapshot.documents
+                                            .forEach((documentSnapshot) {
+                                          Product product =
+                                              Product.fromSnapshot(
+                                                  documentSnapshot);
+                                          products.add(product);
+                                        });
+
+                                        // Update the UI with the search results
+                                        // ...
+                                      }).catchError((error) {
+                                        // Handle any errors that occur during the search
+                                        // ...
+                                      });
                                     },
                                     icon: Icon(
                                       Icons.clear,
@@ -635,4 +672,12 @@ class ScreenOnePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class Product {}
+
+Stream<List<String>> getItemNamesStream() {
+  return FirebaseFirestore.instance.collection('products').snapshots().map(
+      (querySnapshot) =>
+          querySnapshot.docs.map((doc) => doc['name'] as String).toList());
 }

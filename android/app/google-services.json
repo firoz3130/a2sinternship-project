@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "643205310944",
+    "project_id": "a2sinternship",
+    "storage_bucket": "a2sinternship.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643205310944:android:0fbeef64749c407d1ae385",
+        "android_client_info": {
+          "package_name": "com.example.a2sinternshipp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643205310944-9jg7lg0dt4hjrjq2gj3l1f4eu0p7q6jh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNUAaMzV0v3M00j0IMyL8KsWxmNXuvfqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643205310944-9jg7lg0dt4hjrjq2gj3l1f4eu0p7q6jh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -43,7 +43,8 @@ dependencies:
     cached_network_image: ^3.2.3
     flutter_svg: ^2.0.6
     smooth_page_indicator: ^1.1.0
-
+    firebase_core: ^2.13.1
+    cloud_firestore: ^4.8.0
 dev_dependencies:
     flutter_test:
         sdk: flutter

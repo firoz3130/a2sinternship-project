@@ -171,11 +171,7 @@ class DefaultWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [SingleChildScrollView(child: FrameThreeScreen())],
-      ),
+      child: Container(child: FrameFourScreen()),
     );
   }
 }
