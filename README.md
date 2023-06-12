@@ -29,11 +29,9 @@ The final output screens developed are as follows:<br>
 <tr>
 <td><img src="pic2.jpg"></td>
 <td><img src="pic1.jpg"></td>
-<td><img src="pic3.jpg"></td>
-<td><video width="200" ><source src="recording.mp4" type="video/mp4"></video></td>
+<td><video width="200" controls><source src="recording.mp4" type="video/mp4"></video></td>
 </tr>
 </table>
-![](D:/personal/Github/a2sinternshipp/recording.mp4)
 A new Flutter project.
 
 ## Getting Started
